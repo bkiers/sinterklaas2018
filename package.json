@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && tsc && ./node_modules/.bin/webpack",
-    "start": "node dist/src/server.js"
+    "start": "node ./dist/src/server.js"
   },
   "author": "Bart Kiers",
   "license": "MIT",
