@@ -16,6 +16,6 @@ module.exports = {
         filename: "sinterklaas-2018.js",
         path: path.resolve(__dirname, './public/js'),
         libraryTarget: 'var',
-        library: 'xi'
+        library: 'sinterklaas2018'
     }
 };

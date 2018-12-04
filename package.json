@@ -1,9 +1,9 @@
 {
-  "name": "xi",
+  "name": "sinterklaas2018",
   "version": "1.0.0",
   "description": "Sinterklaas 2018",
   "main": "server.js",
-  "repository": "https://github.com/bkiers/xi",
+  "repository": "https://github.com/bkiers/sinterklaas2018",
   "engines": {
     "node": "8.10.0"
   },
