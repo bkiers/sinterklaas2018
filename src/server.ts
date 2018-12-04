@@ -21,7 +21,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use('/', HomeController);
 
-const port: number = parseInt(process.env.PORT as string);
+const port: number = parseInt(process.env.PORT as string) || 80;
 
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}/`);
