@@ -1,0 +1,12 @@
+body {
+    padding: 20px;
+}
+
+#answer {
+    width: 400px;
+}
+
+#answer-icon {
+    height: 45px;
+    margin-left: 35px;
+}

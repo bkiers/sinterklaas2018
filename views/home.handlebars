@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinterklaas 2018</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body style="background: {{question.bgColor}} !important;">
+<div class="container">
+    {{#if question.introduction}}
+        <h1 style="color: {{question.textColor}}">{{question.introduction}}</h1>
+    {{/if}}
+    <br>
+    <br>
+    {{#if question.image}}
+        <img src="img/{{question.image}}"><br><br>
+    {{/if}}
+    {{#if question.question}}
+        <h2 style="color: {{question.textColor}}">{{question.question}}</h2>
+    {{/if}}
+    <form>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <input type="text" class="form-control form-control-lg" id="answer" placeholder="...">
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <img id="answer-icon" src="img/empty.png">
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    let answer = document.getElementById("answer");
+    let answerIcon = document.getElementById("answer-icon");
+
+    answer.addEventListener("keyup", function() {
+
+        let answerValue = answer.value;
+        console.log('answerValue', answerValue);
+
+        if (!!answerValue) {
+            fetch("/check", {
+                method: "POST",
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                body: JSON.stringify({id: '{{question.id}}', answer: answerValue})
+            }).then(async res => {
+                let data = await res.json();
+                if (data.correct) {
+                    answerIcon.src = "img/correct.png";
+                    answer.disabled = 'disabled';
+                    setTimeout(function () {
+                        window.location.href = "/?id=" + data.nextId;
+                    }, 1000);
+                } else {
+                    answerIcon.src = "img/wrong.png";
+                }
+            });
+        }
+        else {
+            answerIcon.src = "img/empty.png";
+        }
+    });
+</script>
+</body>
+</html>
