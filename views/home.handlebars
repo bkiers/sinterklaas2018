@@ -21,16 +21,18 @@
     {{#if question.question}}
         <h2 style="color: {{question.textColor}}">{{question.question}}</h2>
     {{/if}}
-    <form>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                <input type="text" class="form-control form-control-lg" id="answer" placeholder="...">
+    {{#if question.withAnswerField}}
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                    <input type="text" class="form-control form-control-lg" id="answer" placeholder="...">
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                    <img id="answer-icon" src="img/empty.png">
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                <img id="answer-icon" src="img/empty.png">
-            </div>
-        </div>
-    </form>
+        </form>
+    {{/if}}
 </div>
 <script>
     let answer = document.getElementById("answer");

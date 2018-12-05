@@ -4,59 +4,75 @@ import {Question} from "../model/question";
 const router: Router = Router();
 
 const questions: Array<Question> = [
+
+    new Question(
+        "speurtocht.png",
+        "Welkom bij de Sinterklaas-Speurtocht van 2018!",
+        "Jullie moeten een aantal vragen gaan beantwoorden, met daar tussendoor een aantal HINTs. Als je een HINT krijgt, moet je iets in huis op gaan zoeken. Ben je er klaar voor? Voer dan 'ja' in het veld hieronder in.",
+        /ja/i,
+        "#F3BF9D",
+        "#584935"
+    ),
     new Question(
         "buitenspel.png",
         "VRAAG",
-        "Hoe heet deze spel situatie?",
+        "Hoe heet dit?",
         /buiten\s*spel/i,
-        "#FFFFFF",
-        "#000000"
+        "#25f89c",
+        "#007aa3"
     ),
     new Question(
-        "paard.jpg",
-        "HINT",
-        "",
-        /^x$/i,
+        "wolf.jpg",
+        "VRAAG",
+        "Welke kleur ogen heeft een wolf bij de geboorte?",
+        /bl[oa]uwe?/i,
         "#FFFFFF",
-        "#000000"
-    ),
-    new Question(
-        "ea.png",
-        "HINT",
-        "",
-        /^x$/i,
-        "#FFFFFF",
-        "#000000"
-    ),
-    new Question(
-        "capo.jpg",
-        "HINT",
-        "",
-        /^x$/i,
-        "#FFFFFF",
-        "#000000"
-    ),
-    new Question(
-        "rot13.png",
-        "HINT: ROT13",
-        "",
-        /^x$/i,
-        "#FFFFFF",
-        "#000000"
     ),
     new Question(
         "kachel.jpg",
         "HINT",
         "",
-        /^x$/i,
+        /^31415$/i, // K
         "#FFFFFF",
         "#000000"
     ),
     new Question(
-        "pp.jpg",
+        "willem.jpg",
+        "VRAAG",
+        "Hoe oud ben ik?",
+        /^(51|eenenvijftig)$/i,
+        "#405D65",
+        "#FFFFFF"
+    ),
+    new Question(
+        "newyork.jpg",
+        "VRAAG",
+        "Welk beroemde beeld staat in New York?",
+        /vrijheids?\s*beeld/i,
+        "#024C67",
+        "#F3E4C5"
+    ),
+    new Question(
+        "paard.jpg",
         "HINT",
         "",
-        /^x$/i,
+        /^x(y|ij)z$/i, // A
+        "#FFFFFF",
+        "#000000"
+    ),
+    new Question(
+        "berlijn.png",
+        "VRAAG",
+        "In welke stad waren we hier?",
+        /^berlijn$/i,
+        "#6D4A2B",
+        "#C7BFB9"
+    ),
+    new Question(
+        "ea.png",
+        "HINT",
+        "",
+        /^edo$/i, // N
         "#FFFFFF",
         "#000000"
     ),
@@ -69,29 +85,54 @@ const questions: Array<Question> = [
         "#F8FEFE"
     ),
     new Question(
-        "berlijn.png",
-        "VRAAG",
-        "In welke stad waren we hier?",
-        /^berlijn$/i,
-        "#6D4A2B",
-        "#C7BFB9"
+        "capo.jpg",
+        "HINT",
+        "",
+        /^pakjes$/i, // O
+        "#FFFFFF",
+        "#000000"
     ),
     new Question(
-        "algebra.jpg",
+        "fast.png",
         "VRAAG",
-        "Wat is 'N' in de volgende vergelijking: (6 × N) + 18 = 144 ?",
-        /^(21|eenentwintig)$/i,
-        "#003000",
-        "#CFEFD2"
+        "Wat is het snelste dier?",
+        /slecht\s*valk|peregrine\s+falcon/i,
+        "#FFFFFF",
+    ),
+    // TODO
+    new Question(
+        "rot13.png",
+        "HINT",
+        "ROT13",
+        /^b(ij|y)na$/i, // L
+        "#FFFFFF",
+        "#000000"
     ),
     new Question(
-        "willem.jpg",
+        "rebus.png",
         "VRAAG",
-        "Hoe oud is koning Willem Alexander??",
-        /^(51|eenenvijftig)$/i,
-        "#405D65",
-        "#FFFFFF"
+        "Wat gebeurt er in de weken na Sinterklaas?",
+        /de\s*kerst\s*boom\s*op\s*tuig\s*en/i,
+        "#FFFFFF",
+        "#000000"
     ),
+    new Question(
+        "pp.jpg",
+        "HINT",
+        "",
+        /^einde$/i,
+        "#FFFFFF",
+        "#000000"
+    ),
+    new Question(
+        "theend.jpg",
+        "Dat was inderdaad het einde!",
+        "Propeer nu de zakken te vinden door iets te maken van alle hints...",
+        /./i,
+        "#151515",
+        "#EEEEEE",
+        false
+    )
 ];
 
 router.get("/", (req: Request, res: Response) => {

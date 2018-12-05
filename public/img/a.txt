@@ -1,6 +1,0 @@
-CreationDate|ExpirationDate|ClientNumber|ActivationDate|VoucherCode
-11/29/2018 11:03:31 +01:00|11/30/2018 10:00:26 +00:00|null|null|null
-11/29/2018 11:03:31 +01:00|11/30/2018 10:00:26 +00:00|null|null|null
-11/29/2018 11:03:31 +01:00|11/30/2018 10:00:26 +00:00|null|null|null
-11/29/2018 11:03:31 +01:00|11/30/2018 10:00:26 +00:00|null|null|null
-11/29/2018 11:03:31 +01:00|11/30/2018 10:00:26 +00:00|null|null|null
